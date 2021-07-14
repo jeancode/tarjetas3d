@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>asd</title>
+	<script src="vanilla-tilt.js"></script>
+
+	<style>
+		body{
+			margin: 0px;
+			font-family: sans-serif;
+			
+		}
+		#contenido{
+			display: flex;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #242424;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#items{
+			width: 1000px;
+			height: 500px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.items{
+			width: 300px;
+			height: 400px;
+			background: blue;
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			will-change: transform;
+    		transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+			transform-style: preserve-3d;
+			border-radius: 10px;
+			
+		}
+		.inner{
+			position: absolute;
+			width: 80%;
+			height: 80%;
+			top: 50%;
+			left: 50%;
+			transform-style: preserve-3d;
+			transform: perspective(1000px); 
+			transform: translateZ(0px) translateX(-50%) translateY(-50%);
+			display: flex;
+			justify-items: center;
+			flex-direction: column;
+			align-items: center;
+			-webkit-user-select:none;
+			-webkit-transition:all .5s ease;
+		
+		}
+		.inner:hover{
+			transform: translateZ(80px) translateX(-50%) translateY(-50%);
+			-webkit-transition:all .5s ease;
+		}
+		.inner h2{
+			text-align: center;
+			color: white;
+			margin-bottom: 30px;
+		}
+		.inner p{
+			text-align: center;
+			color: white;
+		}
+		.read{
+			width:150px;
+			min-height: 40px;
+			background: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 33px;
+			margin-top: 60px;
+			
+		}
+		.read:hover{
+			text-decoration: underline;
+			transform: translateZ(100px);
+			-webkit-transition:all .5s easE;
+			cursor: default;
+			-webkit-user-select:none;
+		}
+		.gradient1{
+			background: linear-gradient(45deg,#013cc1,#17f4f4);
+		}
+		.gradient2{
+			background: linear-gradient(45deg,#aa00c9,#ff5800);
+		}
+		.gradient3{
+			background: linear-gradient(45deg,#23f443,#160691);
+		}
+	</style>
+</head>
+<body>
+	<div id="contenido">
+		
+		<div id="items">
+			
+			<div class="items gradient1"   data-tilt="" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);" >
+				
+				<div class="inner ">
+					
+					<h2>Tarjeta 1</h2>
+					
+					<p>
+						
+						Esta Trajeta esta echa con css puro y es una Cortesia de Jeancode  codigo libre
+					</p>
+					<div class="read">Leer Más</div>
+				</div>
+			</div>
+			
+			<div class="items gradient2"   data-tilt="" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);" >
+				
+				<div class="inner ">
+					
+					<h2>Tarjeta 1</h2>
+					
+					<p>
+						
+						Esta Trajeta esta echa con css puro y es una Cortesia de Jeancode  codigo libre
+					</p>
+					<div class="read">Leer Más</div>
+				</div>
+			</div>
+
+	
+
+			
+		</div>
+		
+	</div>
+	
+	<script>
+	
+		const elements = document.querySelectorAll(".items");
+		VanillaTilt.init(elements);
+	</script>
+	
+</body>
+</html>
